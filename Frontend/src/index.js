@@ -4,15 +4,54 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
+// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+// import SubastaB from './routes/SubastaB';
+// import SubastasS from './routes/SubastasS';
+// import Privateroutes from './routes/Privateroute';
+// import { AuthPrivate, AuthProvider } from './auth/AuthProvider';
+
+// const router = createBrowserRouter([
+//   {
+//     path:  "/",
+//     element: <App />,
+//     },
+//     {
+//       path:  "/Login",
+//     element: <Login />,
+//     },
+
+//     {
+//     path:  "/",
+//     element: <Privateroutes/>,
+//     children: [
+//       {
+//         path:  "/SubastaS",
+//         element: <SubastasS/>,
+//       }
+//     ]
+//     },
+//     {
+//       path:  "/",
+//       element: <Privateroutes/>,
+//       children: [
+//         {
+//           path:  "/SubastaB",
+//           element: <SubastaB />,
+//         }
+//       ]
+//       },
+// ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-      <ChakraProvider>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ChakraProvider>
+    <React.StrictMode>
+      <App />
+      {/* <AuthProvider>
+        <RouterProvider  router={router}/>
+        </AuthProvider> */}
+    </React.StrictMode>
   </ChakraProvider>
-
 );
 
 // If you want to start measuring performance in your app, pass a function

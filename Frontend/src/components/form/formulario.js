@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Heading, Input, Button, Text } from '@chakra-ui/react';
+import SubastaB from '../../routes/SubastaB';
 
 // Define un objeto SCREEN con los tamaños de pantalla deseados
 const SCREEN = {
@@ -72,7 +73,7 @@ export function Formulario() {
         </Box>
         <Button
           type="button"
-          onClick={handleLogin}
+          onClick={SubastaB}
           backgroundColor="#0FABDE"
           color="white"
           _hover={{ backgroundColor: 'darkblue' }}
