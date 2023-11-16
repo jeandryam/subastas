@@ -29,17 +29,17 @@ export function Formulario() {
 
   return (
     <Flex
-      justifyContent='end'
+      justifyContent='center'
       alignItems='center'
       minHeight='100vh'
       background={`url(${backgroundImageUrl})`}
-      backgroundSize='cover'
+      backgroundSize='50%'
       backgroundPosition='center'
     >
       <Box
         padding='2rem'
         width='100%'
-        maxWidth={['100%', '100%', '450px']}
+        maxWidth={['100%', '100%', '100p']}
         backgroundColor='rgba(255, 255, 255, 0.8)' // Agrega un fondo blanco semitransparente
         borderRadius='2rem'
         margin='2rem'
