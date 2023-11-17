@@ -39,7 +39,7 @@ export function Formulario() {
       <Box
         padding='2rem'
         width='100%'
-        maxWidth={['100%', '100%', '100p']}
+        maxWidth={['100%', '100%', '450px']}
         backgroundColor='rgba(255, 255, 255, 0.8)' // Agrega un fondo blanco semitransparente
         borderRadius='2rem'
         margin='2rem'

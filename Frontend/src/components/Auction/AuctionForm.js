@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { Box, Flex, Heading ,Text} from '@chakra-ui/react';  // Asegúrate de tener las importaciones necesarias
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Input,
+  FormControl,
+  FormLabel,
+  Button,
+} from '@chakra-ui/react';
+
+const backgroundImageUrl = "https://ibb.co/BnFgBq7"
 
 const AuctionForm = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +18,7 @@ const AuctionForm = () => {
     quantity: '',
     maxUnitPrice: '',
     deliveryLocation: '',
-    deliveryTime: '',
+    subTime: '',
     productDetails: '',
     invoiceType: '',
     auctionDuration: '',
@@ -45,7 +56,8 @@ const AuctionForm = () => {
       quantity: '',
       maxUnitPrice: '',
       deliveryLocation: '',
-      deliveryTime: '',
+      description: '',
+      subTime: '',
       productDetails: '',
       invoiceType: '',
       auctionDuration: '',
@@ -60,68 +72,76 @@ const AuctionForm = () => {
       justifyContent='center'
       alignItems='center'
       minHeight='100vh'
-      // Asegúrate de tener la variable backgroundImageUrl definida
-      // background={`url(${backgroundImageUrl})`}  
       backgroundSize='50%'
       backgroundPosition='center'
     >
       <Box
         padding='2rem'
-        width='100%'
-        maxWidth={['100%', '100%', '100%']}
-        backgroundColor='rgba(255, 255, 255, 0.8)'
+        width='80%'
+        maxWidth={['50%', '50%', '50%']}
+        backgroundColor='#FFFF'
         borderRadius='2rem'
         margin='2rem'
         display='flex'
         flexDirection='column'
       >
-        <Text> Ficha deproducto </Text>
+        <Text fontSize='2xl' mb='4'>
+          Ficha de producto
+        </Text>
+        {/* Agregando la imagen en la parte superior */}
+        <Box
+          bgImage={`url(${backgroundImageUrl})`}
+          bgSize='cover'
+          bgPosition='center'
+          height='150px'
+          mb='4'
+        />
         <form onSubmit={handleSubmit}>
           {/* Campos del formulario */}
-          <label htmlFor="productName">Nombre:</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            value={formData.productName}
-            onChange={handleInputChange}
-            required
-          />
+          <FormControl mb='4'>
+            <FormLabel htmlFor='productName'>Nombre:</FormLabel>
+            <Input
+              placeholder='Ingrese el nombre del producto'
+              type='text'
+              id='productName'
+              name='productName'
+              value={formData.productName}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
 
-          <label htmlFor="quantity">Cantidad:</label>
-          <input
-            type="text"
-            id="quantity"
-            name="quantity"
-            value={formData.quantity}
-            onChange={handleInputChange}
-            required
-          />
-          <label htmlFor='maxUnitPrice'> Precio:</label>
-          <imput
-           type="text"
-           id="maxUnitPrice"
-           name="maxUnitPrice"
-           value={formData.maxUnitPrice}
-           onChange={handleInputChange}
-           required
-           />
-
+          <FormControl mb='4'>
+            <FormLabel htmlFor='productDetails'>Descripción del producto:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='productDetails'
+              name='productDetails'
+              value={formData.productDetails}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
 
           {/* Otros campos del formulario... */}
 
           {/* Campo de carga de imágenes */}
-          <label htmlFor="productImage">Subir foto referencial:</label>
-          <input
-            type="file"
-            id="productImage"
-            name="productImage"
-            onChange={handleImageUpload}
-            accept="image/*"
-          />
+          <FormControl mb='4'>
+            <FormLabel htmlFor='productImage'>Subir foto referencial:</FormLabel>
+            <Input
+              type='file'
+              id='productImage'
+              name='productImage'
+              onChange={handleImageUpload}
+              accept='image/*'
+            />
+          </FormControl>
 
           {/* Botón de envío */}
-          <button type="submit">Crear Subasta</button>
+          <Button type='submit' colorScheme='teal' mt='4'>
+            Crear Subasta
+          </Button>
         </form>
       </Box>
     </Flex>

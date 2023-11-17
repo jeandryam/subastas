@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 const Layout = ({ children }) => {
   return (
     <Box
-      backgroundColor="red"
+      backgroundColor="#FF5454"
       //backgroundImage="url('https://i.postimg.cc/D0SdgpSk/Group-84.png')"
       backgroundSize="cover"
       backgroundPosition="center"
