@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Heading, Input, Button, Text, Stack } from '@chakra-ui/react';
+//import { Navigate, useNavigate} from 'react-router-dom';
 
 // Define un objeto SCREEN con los tamaños de pantalla deseados
 const SCREEN = {
@@ -12,6 +13,7 @@ const SCREEN = {
 const backgroundImageUrl = 'https://i.postimg.cc/D0SdgpSk/Group-84.png'  // Reemplaza con la URL de tu imagen de fondo
 
 export function Login() {
+   // const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -24,6 +26,7 @@ export function Login() {
         // Simulamos una verificación exitosa aquí
         setError('');
         alert('Inicio de sesión exitoso'); // Puedes cambiar esto con redireccionamiento u otras acciones
+       // navigate('./dashboard')
       }
     };
 
@@ -33,8 +36,8 @@ export function Login() {
       alignItems='center'
       minHeight='100vh'
       background={`url(${backgroundImageUrl})`}
-      backgroundSize='100%' 
-      backgroundPosition='center'
+      backgroundSize='cover' 
+      backgroundPosition='cover'
       backgroundRepeat='no-repeat'
     >
       <Box

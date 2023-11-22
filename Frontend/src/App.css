@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.Header {
+margin: 0;
+}
+.SubForm{
+  margin:0;
+}

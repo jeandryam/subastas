@@ -21,7 +21,7 @@ const SubForm = () => {
     subTime: '',
     productDetails: '',
     invoiceType: '',
-    auctionDuration: '',
+    deliveryTime: '',
     productImage: null,
     keywords: '',
     termsAgreed: false,
@@ -60,7 +60,7 @@ const SubForm = () => {
       subTime: '',
       productDetails: '',
       invoiceType: '',
-      auctionDuration: '',
+      deliveryTime: '',
       productImage: null,
       keywords: '',
       termsAgreed: false,
@@ -81,7 +81,7 @@ const SubForm = () => {
         maxWidth={['50%', '50%', '50%']}
         backgroundColor='#FFFF'
         borderRadius='2rem'
-        margin='2rem'
+        margin='0.5rem'
         display='flex'
         flexDirection='column'
       >
@@ -112,7 +112,7 @@ const SubForm = () => {
           </FormControl>
 
           <FormControl mb='4'>
-            <FormLabel htmlFor='productDetails'>Descripción del producto:</FormLabel>
+            <FormLabel htmlFor='productDetails'>Detalles del producto:</FormLabel>
             <Input
               placeholder='Detalle las características que busca en su producto'
               type='text'
@@ -123,10 +123,103 @@ const SubForm = () => {
               required
             />
           </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='description'>Descripción del producto:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='description'
+              name='description'
+              value={formData.description}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='quantity'>Cantidad:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='quantity'
+              name='quantity'
+              value={formData.quantity}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='maxUnitPrice'>Precio Base:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='maxUnitPrice'
+              name='maxUnitPrice'
+              value={formData.maxUnitPrice}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='inviceType'>Tipo de factura:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='invoiceType'
+              name='ivoiceType'
+              value={formData.invoiceType}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='subTime'> Duracion de la subasta:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='subTime'
+              name=''
+              value={formData.subTime}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='deliveryLocation'>Lugar de Entrega:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='deliveryLocation'
+              name='deliveryLocation'
+              value={formData.deliveryLocation}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='deliveryTime'>Tiempo de Entrega:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='deliveryTime'
+              name='deliveryTime'
+              value={formData.deliveryTime}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
+          <FormControl mb='4'>
+            <FormLabel htmlFor='keywords'>Plabras claves:</FormLabel>
+            <Input
+              placeholder='Detalle las características que busca en su producto'
+              type='text'
+              id='keywords'
+              name='keyword'
+              value={formData.keywords}
+              onChange={handleInputChange}
+              required
+            />
+          </FormControl>
 
-          {/* Otros campos del formulario... */}
-
-          {/* Campo de carga de imágenes */}
           <FormControl mb='4'>
             <FormLabel htmlFor='productImage'>Subir foto referencial:</FormLabel>
             <Input
@@ -139,7 +232,7 @@ const SubForm = () => {
           </FormControl>
 
           {/* Botón de envío */}
-          <Button type='submit' colorScheme='teal' mt='4'>
+          <Button type='submit' colorScheme='teal'  mt='4'>
             Crear Subasta
           </Button>
         </form>
