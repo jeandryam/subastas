@@ -14,20 +14,25 @@
 
 // src/App.js
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+//import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import Layout from './components/layouts';
-//import { Formulario } from './components/form/formulario'
+import Layout from './Components/layouts';
+import { Formulario } from './Components/form/formulario'
 import './App.css';
-import SubastaB from './routes/SubastaB';
+import {Login} from'./Components/Auth/Login'
+import Header from './Components/Common/Header';
+//import SubastaB from './routes/SubastaB';
 
 const App = () => {
   return (
     <ChakraProvider>
       <Layout>
-  
-        <SubastaB/>
+   <Login/> 
+   {/* <Header/> */}
+ {/* <Formulario/> */}
+        {/* <SubastaB/> */}
       </Layout>
+
     </ChakraProvider>
   );
 };
