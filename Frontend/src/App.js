@@ -19,7 +19,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Layout from './components/layouts';
 //import { Formulario } from './Components/form/formulario'
 import './App.css';
-//import {Login} from'./components/Auth/Login'
+import {Login} from'./components/Auth/Login'
 import { BuyerDashboard } from './components/User/BuyerDashboard';
 //import SubForm from './components/Subastas/SubForm';
 //import Header from './Components/Common/Header';
@@ -29,8 +29,8 @@ const App = () => {
   return (
     <ChakraProvider>
       <Layout>
-   {/* <Login/>  */}
-   <SubForm/>
+   <Login/>
+  
    {/* <Header/> */}
  {/* <Formulario/> */}
 {/* <BuyerDashboard/> */}

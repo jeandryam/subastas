@@ -2,14 +2,11 @@ import React from 'react';
 import { Box, Heading, Text, Link } from '@chakra-ui/react';
 import { Card, CardBody, Stack, Button } from '@chakra-ui/react';
 import { Grid, GridItem } from '@chakra-ui/react';
-import SubForm from './SubForm';
 
 export function BuyerDashboard() {
   return (
-    <Box textAlign='center' padding='4'>
-      {/* Agregando una imagen */}
-      <img src="ruta-de-tu-imagen" alt="Imagen de Subastas" style={{ width: '100%', marginBottom: '2rem' }} />
-
+    <Box display="flex" justifyContent="flex-end">
+      <Box width="89%" padding="4" textAlign="center">
       <Card
         direction={{ base: 'column', sm: 'row' }}
         overflow='hidden'
@@ -18,7 +15,7 @@ export function BuyerDashboard() {
         backgroundColor='#FF5454'
       >
         <Box flex='1' display='flex' justifyContent='center'>
-          {/* Contenido del SVG */}
+
         </Box>
         <Stack>
           <CardBody>
@@ -73,6 +70,7 @@ export function BuyerDashboard() {
       <Link href='/subastas' color='blue.500'>
         Explorar Subastas
       </Link>
+      </Box>
     </Box>
   );
 }

@@ -37,7 +37,7 @@ const SubForm = () => {
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    // Lógica para procesar y almacenar la imagen según tus necesidades
+
     setFormData({
       ...formData,
       productImage: file,
@@ -46,11 +46,8 @@ const SubForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica de validación y negocios aquí
 
-    // Por ejemplo, puedes enviar el formulario al servidor o almacenar en el estado local
 
-    // Limpiar el formulario después de enviar
     setFormData({
       productName: '',
       quantity: '',
@@ -81,7 +78,7 @@ const SubForm = () => {
         maxWidth={['50%', '50%', '50%']}
         backgroundColor='#FFFF'
         borderRadius='2rem'
-        margin='2rem'
+        margin='0.5rem'
         display='flex'
         flexDirection='column'
       >
@@ -219,11 +216,7 @@ const SubForm = () => {
               required
             />
           </FormControl>
-          
 
-          {/* Otros campos del formulario... */}
-
-          {/* Campo de carga de imágenes */}
           <FormControl mb='4'>
             <FormLabel htmlFor='productImage'>Subir foto referencial:</FormLabel>
             <Input
@@ -236,7 +229,7 @@ const SubForm = () => {
           </FormControl>
 
           {/* Botón de envío */}
-          <Button type='submit' colorScheme='teal' mt='4'>
+          <Button type='submit' colorScheme='teal'  mt='4'>
             Crear Subasta
           </Button>
         </form>
