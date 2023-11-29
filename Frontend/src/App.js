@@ -1,18 +1,32 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Login } from './Components/Auth/Login';
+//import { BrowserRouter } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import Layout from './Components/layouts';
+//import { Formulario } from './Components/form/formulario'
+import './App.css';
+import {Login} from'./Components/Auth/Login'
 import { BuyerDashboard } from './Components/User/BuyerDashboard';
+//import { SellerDashboard } from './Components/User/SellerDashboard';
+//import SubForm from './components/Subastas/SubForm';
+//import Header from './Components/Common/Header';
+//import SubastaB from './routes/SubastaB';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/buyerDashboard" element={<BuyerDashboard />} />
-        {/* Agrega más rutas según sea necesario */}
-      </Routes>
-    </Router>
+    <ChakraProvider>
+      <Layout>
+   <Login/>
+   {/* <SellerDashboard>
+
+   </SellerDashboard> */}
+  
+   {/* <Header/> */}
+ {/* <Formulario/> */}
+<BuyerDashboard/>
+        {/* <SubastaB/> */}
+      </Layout>
+
+    </ChakraProvider>
   );
 };
 
