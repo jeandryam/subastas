@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Flex, Heading, Input, Button, Text, Stack } from '@chakra-ui/react';
-//import { Navigate, useNavigate} from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 
-// Define un objeto SCREEN con los tamaños de pantalla deseados
+import {useNavigate} from 'react-router-dom';
+
+
 const SCREEN = {
   xs: { max: 600 },
   sm: { max: 768 },
@@ -10,23 +12,25 @@ const SCREEN = {
   lg: { max: 1200 },
 };
 
-const backgroundImageUrl = 'https://i.postimg.cc/D0SdgpSk/Group-84.png'  // Reemplaza con la URL de tu imagen de fondo
+const backgroundImageUrl = 'https://i.postimg.cc/D0SdgpSk/Group-84.png'
 
 export function Login() {
-   // const navigate = useNavigate();
+ // const history = useHistory();
+   const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
   
     const handleLogin = () => {
-      // Verifica las credenciales aquí (puedes agregar lógica personalizada)
+      
       if (!username || !password) {
         setError('Por favor, ingresa tu nombre de usuario y contraseña.');
       } else {
         // Simulamos una verificación exitosa aquí
         setError('');
-        alert('Inicio de sesión exitoso'); // Puedes cambiar esto con redireccionamiento u otras acciones
-       // navigate('./dashboard')
+        alert('Inicio de sesión exitoso'); 
+        navigate('/BuyerDashboard')
+      //history.push('/BuyerDashboard');
       }
     };
 
@@ -75,8 +79,7 @@ export function Login() {
               onClick={handleLogin}
               backgroundColor='#0FABDE'
               color='white'
-              _hover={{ backgroundColor: 'darkblue' }}
-            >
+              _hover={{ backgroundColor: '#004772' }}>
               Iniciar Sesión
             </Button>
           </Stack>

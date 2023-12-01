@@ -2,8 +2,14 @@ import React from 'react';
 import { Box, Heading, Text, Link, Button } from '@chakra-ui/react';
 import { Card, CardBody, Stack } from '@chakra-ui/react';
 import { Grid, GridItem } from '@chakra-ui/react';
+import { useNavigate,  } from 'react-router-dom'; 
 
 export function BuyerDashboard() {
+  const navigate= useNavigate();
+
+  const handleCrearSubastaClick = () => {
+    navigate('/SubForm');
+  };
   return (
     <Box display="flex" justifyContent="flex-end">
       <Box width="89%" padding="4" textAlign="center">
@@ -31,7 +37,7 @@ export function BuyerDashboard() {
                 textColor='#FF5454'
                 borderBottomRadius='10px'
                 mt='3'
-              >
+                onClick={handleCrearSubastaClick}  >
                 CREAR NUEVA SUBASTA
               </Button>
             </CardBody>
@@ -72,7 +78,7 @@ export function BuyerDashboard() {
         <Text fontSize='lg' marginBottom='4'>
           Descubre increíbles subastas y productos.
         </Text>
-        <Link href='/subastas' color='blue.500'>
+        <Link href='/SubList' color='blue.500'>
           Explorar Subastas
         </Link>
       </Box>

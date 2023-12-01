@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -13,6 +14,8 @@ import {
 const backgroundImageUrl = "https://ibb.co/BnFgBq7"
 
 const SubForm = () => {
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     productName: '',
     quantity: '',
@@ -46,6 +49,7 @@ const SubForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+     navigate('/SubDeta', {state: { subastaDetails: formData }});
     // Lógica de validación y negocios aquí
 
     // Por ejemplo, puedes enviar el formulario al servidor o almacenar en el estado local
@@ -160,12 +164,12 @@ const SubForm = () => {
             />
           </FormControl>
           <FormControl mb='4'>
-            <FormLabel htmlFor='inviceType'>Tipo de factura:</FormLabel>
+            <FormLabel htmlFor='invoiceType'>Tipo de Comprobante:</FormLabel>
             <Input
               placeholder='Detalle las características que busca en su producto'
               type='text'
               id='invoiceType'
-              name='ivoiceType'
+              name='invoiceType'
               value={formData.invoiceType}
               onChange={handleInputChange}
               required
@@ -177,7 +181,7 @@ const SubForm = () => {
               placeholder='Detalle las características que busca en su producto'
               type='text'
               id='subTime'
-              name=''
+              name='subTime'
               value={formData.subTime}
               onChange={handleInputChange}
               required
@@ -213,7 +217,7 @@ const SubForm = () => {
               placeholder='Detalle las características que busca en su producto'
               type='text'
               id='keywords'
-              name='keyword'
+              name='keywords'
               value={formData.keywords}
               onChange={handleInputChange}
               required
